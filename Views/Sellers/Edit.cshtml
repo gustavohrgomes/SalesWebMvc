@@ -1,0 +1,47 @@
+﻿@model SalesWebMvc.Models.ViewModels.SellerFormViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<section class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input asp-for="Seller.Id" type="hidden"/>
+
+            <fieldset class="form-group">
+                <label asp-for="Seller.Name" class="col-form-label"></label>
+                <input asp-for="Seller.Name" type="text" class="form-control" />
+            </fieldset> 
+
+            <fieldset class="form-group">
+                <label asp-for="Seller.Email" class="col-form-label"></label>
+                <input asp-for="Seller.Email" type="email" class="form-control" />
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label asp-for="Seller.BirthDate" class="col-form-label"></label>
+                <input asp-for="Seller.BirthDate" type="date" class="form-control" />
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label asp-for="Seller.BaseSalary" class="col-form-label"></label>
+                <input asp-for="Seller.BaseSalary" type="text" class="form-control" />
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label asp-for="Seller.DepartmentId" class="col-form-label"></label>
+                <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments, "Id", "Name"))" class="form-control"></select>
+            </fieldset>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+
+</section>
