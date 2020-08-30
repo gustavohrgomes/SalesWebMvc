@@ -96,8 +96,6 @@ namespace SalesWebMvc.Controllers
             {
                 return RedirectToAction(nameof(Error), new { message = err.Message });
             }
-
-            
         }
 
         public async Task<IActionResult> Edit(int? id) 
